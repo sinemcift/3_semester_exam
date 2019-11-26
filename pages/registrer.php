@@ -1,4 +1,8 @@
 
+<?php
+require('../config/config.php');
+require('../config/db.php');
+?>
 <?php include('../inc/header.php'); ?>
 
 <?php 
@@ -17,10 +21,12 @@ if(isset($_POST['submit'])){
     $pass1 = mysqli_real_escape_string ($conn, $_POST['password1']);
     //password2 = gentag password
     $pass2 = mysqli_real_escape_string ($conn, $_POST['password2']);
+    //name = navn
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
 
-    $message = "Brugernavn er optaget!";
+    $message = "Brugernavnet \"" . $userName . "\" er optaget";
 
-    //Stemmer de 2 passwords overens med hinanden
+    //Stemmer de 2 passwords overens med hinanden 
     if($pass1 == $pass2){
         $flag = true;
     }
@@ -40,7 +46,7 @@ if(isset($_POST['submit'])){
         
         $hashed = hash('sha512', $salt);
 
-        $sql = "INSERT INTO login(login_name, login_pasword) values('$userName', '$hashed')";
+        $sql = "INSERT INTO login(login_name, login_pasword) values ('$userName', '$hashed')";
         $result = mysqli_query($conn, $sql) or die ("Query virker overhovedet ikke!");
     }
 }
@@ -68,7 +74,18 @@ if(isset($_POST['submit'])){
                 <label for="password2">Gentag password</label>
                 <input type="password" class="form-control" placeholder="Password" name="password2" id="pass2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" title="Store og små bogstaver, min 8 tegn">
             </div>
+            <div class="form-group">
+                <label for="name">Fornavn</label>
+                <input type="text" class="form-control" placeholder="Indtast fornavn" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Adresse</label>
+                <input type="text" class="form-control" placeholder="Indtast gade, nummer, etage og by" name="address" id="address" required>
+            </div>
+
+
             <button class="btn btn-primary" name="submit">Submit</button>
+
         </form> 
        
     </div>

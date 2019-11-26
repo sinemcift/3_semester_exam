@@ -1,15 +1,13 @@
 <?php
-    require('../config/config.php');
-    require('../config/db.php');
+require('../config/config.php');
+require('../config/db.php');
 ?>
 <?php include('../inc/header.php'); ?>
 
-<?php 
-    session_start();
+<?php
+session_destroy();
 
-    session_destroy();
-
-    header("location:../index.php");
+header("location:login.php");
 ?>
 
 <?php include('../inc/footer.php'); ?> 
