@@ -23,6 +23,7 @@ if(isset($_POST['submit'])){
     $pass2 = mysqli_real_escape_string ($conn, $_POST['password2']);
     //name = navn
     $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $age = mysqli_real_escape_string($conn, $_POST['age']); 
 
     $message = "Brugernavnet \"" . $userName . "\" er optaget";
 
@@ -46,7 +47,7 @@ if(isset($_POST['submit'])){
         
         $hashed = hash('sha512', $salt);
 
-        $sql = "INSERT INTO login(login_name, login_pasword) values ('$userName', '$hashed')";
+        $sql = "INSERT INTO login(login_name, login_pasword, age) values ('$userName', '$hashed', $age)";
         $result = mysqli_query($conn, $sql) or die ("Query virker overhovedet ikke!");
     }
 }
@@ -81,6 +82,10 @@ if(isset($_POST['submit'])){
             <div class="form-group">
                 <label for="address">Adresse</label>
                 <input type="text" class="form-control" placeholder="Indtast gade, nummer, etage og by" name="address" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Alder</label>
+                <input type="number" class="form-control" placeholder="Indtast din alder" name="age" id="age" required>
             </div>
 
 

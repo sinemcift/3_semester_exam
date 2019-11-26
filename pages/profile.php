@@ -6,6 +6,12 @@ require_once('../config/db.php');
 <?php include('../inc/header.php'); ?>
 <?php include('../inc/logged-in.php'); ?>
 
+<?php
+
+
+
+?>
+
 <!-- content on page (HTML) -->
 <div class="container">
     <div class="row">
@@ -18,7 +24,9 @@ require_once('../config/db.php');
             <form method="POST">
                 <div class="form-group">
                     <label for="username" method="POST">Navn</label>
-                    <input type="text" class="form-control" placeholder="Indtast fornavn" name="username">
+                    <span type="text" class="form-control" placeholder="Indtast fornavn" name="username">
+                
+                    </span>
                 </div>
                 <div class="form-group">
                     <label for="username" method="POST">Adresse</label>
