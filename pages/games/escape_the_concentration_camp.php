@@ -18,7 +18,7 @@ require('../../config/db.php');
         </div>
         <!-- This header is hidden until you finish the game. -->
         <h3 id="congrats" class=" col-md-8 mb-5">CONGRATULATIONS! <br>
-        You managed the escape the concentration camp, and save all your family members! <br>Your score is:</h3> 
+        You managed to escape the concentration camp, and save all your family members! <br>Your score is:</h3> 
 
         <div class="col-md-3">
             <h5>Number of family saved: <span id="keydisplay"></span></h5>
