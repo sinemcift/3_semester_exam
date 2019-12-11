@@ -1,0 +1,133 @@
+/*variables*/
+$dark-grey: #0f191b;
+$light-grey: #313b3d;
+$light-red: rgb(255, 64, 70);
+$dark-red: rgb(206, 57, 62);
+$white: #ffffff;
+$secondary-font: "UnifrakturCook", cursive;
+$header1: 3em;
+
+/*MIXINS*/
+@mixin btn-hover() {
+  background-color: $dark-red;
+  cursor: pointer;
+  text-decoration: none;
+  color: $white;
+}
+@mixin btn() {
+  background-color: $light-red;
+  font-size: 20px;
+  font-weight: 500;
+  color: $white;
+}
+
+/* Global styles*/
+body {
+  background-color: $dark-grey;
+  background-image: url('../image/background.png');
+  background-attachment: fixed;
+  background-position: center;
+}
+p {
+  color: $white;
+}
+span {
+  color: $light-red;
+}
+h1, h3, h4, h5 {
+  color: $white;
+}
+.page-title {
+  color: $light-red;
+  font-family: $secondary-font;
+  font-size: $header1;
+  margin-bottom: 1.5em; 
+}
+.sub-header{
+  font-family:$secondary-font;
+  color: $light-red;
+}
+/*Navigation*/
+.navbar {
+  background-color: #00000065;
+  padding: 10px 60px;
+}
+.navbar-brand {
+  font-family: $secondary-font;
+  color: $light-red !important;
+  font-size: 3em;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: $white!important;
+}
+
+/* Card */
+.card {
+  border: none;
+  border: 3px solid $light-red;
+}
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(.0em - 0px);
+  border-top-right-radius: calc(0rem - 0px); 
+}
+.card-body {
+  background-color: $light-grey;
+}
+.card-title {
+    color: $light-red;
+}
+/* footer */
+footer {
+  background-color: $light-grey;
+  color: #fff;
+}
+/* Escape the concentration camp */
+#congrats {
+  display: none;
+}
+.img-icon img{
+  width: 30px;
+}
+#description {
+  display: block;
+}
+/*profile*/
+
+.profile-input {
+  border: 1px solid  $light-red;
+}
+.profile-input p{
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+.edit-btn{
+  @include btn()
+}
+.edit-btn:hover{
+  @include btn-hover()
+}
+.save-btn {
+  @include btn();
+}
+.save-btn:hover {
+  @include btn-hover();
+}
+/* Login */
+label {
+  color: $white;
+}
+.login-btn{
+  @include btn();
+}
+.login-btn:hover{
+  @include btn-hover();
+}
+
+/* Register page */
+.register-btn{
+  @include btn();
+}
+.register-btn:hover{
+  @include btn-hover();
+}

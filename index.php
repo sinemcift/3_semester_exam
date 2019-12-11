@@ -3,15 +3,11 @@
     require_once('config/db.php');
 ?>
 <?php include('inc/header.php'); ?>
-
+<?php include('inc/logged-in.php'); ?>
 <?php
 if (isset($_SESSION['adgang'])) {
-    //Dette bliver ændret senere til en "rigtig" home page. 
-    header("location:pages/games.php");
-    
-} else {
-    header("location:pages/login.php");
+    header("location:".ROOT_URL."pages/games.php");
 }
-?> 
+?>
 
 <?php include('inc/footer.php'); ?> 
